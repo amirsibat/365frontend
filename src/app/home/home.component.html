@@ -1,0 +1,55 @@
+<div *ngFor="let day of byDay | keys">
+    <div class="match-date">
+        <!--<h3>{{ match.STime | date: 'Long Date'}}</h3>-->
+        <h3>{{ formatDate(day.key) }}</h3>
+    </div>
+    <div class="match-table" *ngFor="let comp of day.value | keys">
+        <div class="league-title">
+            <ul>
+                <li>
+                    <img src="http://imagescache.365scores.com/image/upload/w_48,h_48,c_limit,f_webp,q_90,d_Competitors:default1.png/Competitors/{{comp.key}}" class="logo-league">
+                </li>
+                <li>
+                    <h5 class="mobile-league-title">{{ getCompetitionName(comp.key)}}</h5>
+                    <h3 class="desktop-league-title">{{ getCompetitionName(comp.key) }}</h3>
+                </li>
+            </ul>
+        </div>
+        <div class="matches-container" *ngFor="let match of comp.value; let last = last">
+            <div class="match">
+                <ul class="single-match-container" ngclass="{'last-match': last}">
+                    <li class="first-team">
+                        <span><img src="http://imagescache.365scores.com/image/upload/w_48,h_48,c_limit,f_webp,q_90,d_Competitors:default1.png/Competitors/{{match.Comps[0].ID}}"
+                             class="logo-team"></span>
+                        <span>{{ match.Comps[0].Name }}</span>
+                    </li>
+                    <li class="score">
+                        <div class="match-score live-game" *ngIf="match.Active">
+                            <ul>
+                                <li *ngIf=" match.GT < 45 && match.GT > 0">First Half</li>
+                                <li *ngIf=" match.GT > 45">Second Half</li>
+                                <li>{{match.Scrs[0]}} - {{match.Scrs[1]}}</li>
+                                <li class="live-game-time">Live '{{match.GT}}</li>
+                            </ul>
+                        </div>
+                        <div class="match-score" *ngIf="!match.Active && match.Scrs[0] != -1">
+                            <ul>
+                                <li>{{match.Scrs[0]}} - {{match.Scrs[1]}}</li>
+                                <li>Finished</li>
+                            </ul>
+                        </div>
+                        <div class="match-score" *ngIf="!match.Active && match.Scrs[0] === -1">
+                            <span>{{setGameTime(match.STime)}}</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span>{{match.Comps[1].Name}}</span>
+                        <span><img src="http://imagescache.365scores.com/image/upload/w_48,h_48,c_limit,f_webp,q_90,d_Competitors:default1.png/Competitors/{{match.Comps[1].ID}}"
+                                          class="logo-team"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,141 @@
+.match-date > h3 {
+    text-align: center;
+}
+
+.match-table {
+    border-radius: 10px;
+    background-color: #2e373e;
+    box-shadow: 5px 5px 15px #000;
+    position: relative;
+}
+
+.mobile-league-title {
+    display: none;
+}
+
+.league-title {
+    color: white;
+    background-color: #272f35;
+    border-radius: 5px 5px 0 0;
+}
+
+.league-title ul li {
+    display: inline-block;
+}
+
+.single-match-container {
+    overflow: hidden;
+    padding: 2px 0 7px 0;
+    border-bottom: 2px solid #272f35;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.last-match {
+    overflow: hidden;
+    padding: 2px 0 7px 0;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.single-match-container  li {
+    font-size: 13px;
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+}
+
+.match-score {
+    color: #1ea5ce;
+}
+
+.match-score ul {
+    list-style: none;
+    display: table;
+    margin: 11px 1px -14px 70px;
+}
+
+.match-score ul li {
+    display: table-row;
+}
+
+.live-game ul {
+    vertical-align: middle;
+}
+
+.live-game ul li {
+    list-style-type: none;
+    text-align: center;
+    vertical-align: middle;
+}
+.live-game-time {
+    background-color: red;
+    border-radius: 6px;
+    color: white;
+    font-size: 11px;
+    width: 20px;
+}
+
+.logo-team {
+    vertical-align: middle;
+    width: 50px;
+}
+
+.logo-league {
+    vertical-align: middle;
+    margin-right: 14px;
+    height: 40px;
+    width: 40px;
+}
+
+@media all and (max-width: 736px) {
+    .match-score ul {
+        list-style: none;
+        display: table;
+        margin: 0 0 -12px 20px;
+    }
+}
+
+@media all and (max-width: 732px) {
+    .match-score ul {
+        list-style: none;
+        display: table;
+        margin: 0 0 -12px 10px;
+    }
+}
+
+/* Portrait and Landscape */
+@media all and (max-width: 640px) {
+    .logo-league {
+        width: 30px;
+        height: 30px;
+    }
+    .logo-team {
+        width: 30px;
+        height: 30px;
+    }
+    .mobile-league-title {
+        display: block;
+    }
+    .desktop-league-title {
+        display: none;
+    }
+    .single-match-container  li {
+        font-size: 11px;
+        display: inline-block;
+        text-align: center;
+    }
+    .match-score ul {
+        list-style: none;
+        display: table;
+        margin: 0 0 -12px 19px;
+    }
+}
+
+@media all and (max-width: 375px) {
+    .match-score ul {
+        list-style: none;
+        display: table;
+        margin: 0 0 -12px -8px;
+    }
+}
