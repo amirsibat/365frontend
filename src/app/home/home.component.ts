@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
                     this.byDay = byDay
                 })
             }
-        }, 500000)
+        }, 5000)
 
     }
     ngOnInit() {

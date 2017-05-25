@@ -590,7 +590,7 @@ var HomeComponent = (function () {
                     _this.byDay = byDay;
                 });
             }
-        }, 500000);
+        }, 5000);
     }
     HomeComponent.prototype.ngOnInit = function () {
         var _this = this;
